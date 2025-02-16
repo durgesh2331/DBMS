@@ -1,0 +1,111 @@
+To determine the candidate keys, we need to find the minimal sets of attributes whose closure contains all attributes of R(A, B, C, D, E, H).
+
+Step 1: Given Functional Dependencies (FDs)
+A → B
+BC → D
+E → C
+D → A
+Step 2: Finding the Closure of a Potential Key
+To be a candidate key, a set must determine all attributes (A, B, C, D, E, H).
+
+Finding A⁺ (Closure of A)
+A → B (Add B)
+We cannot determine C, D, or E, so A alone is not a candidate key.
+Finding AE⁺
+A → B (Add B)
+E → C (Add C)
+BC → D (Since we have B and C, add D)
+D → A (A is already there)
+Now, we have {A, B, C, D, E}, but we are missing H.
+To cover H, we add H → AEH.
+
+Finding BE⁺
+E → C (Add C)
+BC → D (Since we have B and C, add D)
+D → A (Add A)
+A → B (B is already there)
+Now, we have {A, B, C, D, E}, but we are missing H.
+To cover H, we add H → BEH.
+
+Finding DE⁺
+D → A (Add A)
+A → B (Add B)
+E → C (Add C)
+BC → D (D is already there)
+Now, we have {A, B, C, D, E}, but we are missing H.
+To cover H, we add H → DEH.
+
+Step 3: Identifying the Minimal Keys
+Now we have three minimal sets whose closure gives all attributes:
+
+AEH
+BEH
+DEH
+Thus, the candidate keys are AEH, BEH, and DEH.
+
+Final Answer:
+✅ Option (D) AEH, BEH, DEH
+
+
+
+
+Step 1: Identify the Candidate Keys
+From our previous solution, the candidate keys of the relation R(A, B, C, D, E, H) are:
+
+AEH
+BEH
+DEH
+Step 2: Super Key Definition
+A super key is any superset of a candidate key. This means that we can form super keys by adding extra attributes from the relation R(A, B, C, D, E, H).
+
+Step 3: Compute Super Keys
+Each candidate key can form super keys by adding any subset of the remaining attributes that are not already included.
+
+The total number of super keys for a candidate key X is given by:
+
+Total Super Keys
+=
+∑
+𝐾
+2
+(
+𝑛
+−
+∣
+𝐾
+∣
+)
+Total Super Keys= 
+K
+∑
+​
+ 2 
+(n−∣K∣)
+ 
+where:
+
+n = total number of attributes in the relation (6: A, B, C, D, E, H).
+|K| = size of the candidate key (here, 3 for AEH, BEH, and DEH).
+Remaining attributes = 
+6
+−
+3
+=
+3
+6−3=3 (since candidate keys already contain 3 attributes, the remaining ones can either be included or not).
+Each candidate key can generate 
+2
+3
+=
+8
+2 
+3
+ =8 super keys (by including or excluding the remaining attributes).
+Since we have 3 candidate keys, the total number of super keys is:
+
+3
+×
+8
+=
+24
+3×8=24
