@@ -1,0 +1,24 @@
+1.The closure of an attribute set is the collection of all attributes that can be determined using a given set of attributes and functional dependencies.
+
+So, A⁺ = {A, B, C} is the closure of A.
+
+2. If the closure of an attribute set X (denoted as X⁺) contains all attributes of the relation, then X is a super key.
+
+3.Explanation in Simple Terms:
+A super key is a set of attributes that can uniquely identify all other attributes in a relation.
+
+Now, A⁺ = {A, B, C, D}, which is the entire relation schema.
+
+Since A⁺ contains all attributes, A is a super key.
+
+Thus, the statement is true:
+"The closure of a super key is the entire relation schema."
+
+
+4. A super key can have extra attributes, but a candidate key is the smallest possible set that still uniquely determines everything.
+
+If we remove any attribute from a candidate key, it should no longer be able to determine all attributes.
+
+
+
+
